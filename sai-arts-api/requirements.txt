@@ -1,0 +1,5 @@
+djangorestframework
+psycopg2
+Pillow
+pytz 
+django-probes

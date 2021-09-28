@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sai-arts-api-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sai-arts-api
+  template:
+    metadata:
+      labels:
+        app: sai-arts-api
+    spec:
+      containers:
+        - name: sai-arts-api
+          image: okidijimmyjones/saiarts
+          env:
+            - name: DB_HOST
+              value: postgres-srv
+            - name: DB_USER
+              value: postgres
+            - name: DB_NAME
+              value: app
+            - name: DB_PASS
+              value: supersecretpassword
+            - name: DB_PORT
+              value: '5432'
+          ports:
+            - containerPort: 8000
+        
+      restartPolicy: Always
+            
+          
+# services
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: sai-arts-api-srv
+spec:
+  selector:
+    app: sai-arts-api
+  ports:
+    - name: sai-arts-api
+      protocol: TCP
+      port: 8000
+      targetPort: 8000
+  type: NodePort
