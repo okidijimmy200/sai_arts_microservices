@@ -10,9 +10,9 @@ spec:
     - host: saiarts.dev
       http:
         paths:
-          - path: /api/?(.*)
+          - path: /api/user?(.*)
           # route it to auth-srv
             backend:
-              serviceName: sai-arts-api
+              serviceName: sai-arts-api-srv
               servicePort: 8000
             
