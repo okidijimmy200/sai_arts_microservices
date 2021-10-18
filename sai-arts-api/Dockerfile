@@ -26,4 +26,4 @@ USER user
 EXPOSE 8000
 
 # ENTRYPOINT ["python", "./app/manage.py", "runserver", "0.0.0.0:8000" ]
-CMD ["sh","-c","export DJANGO_SETTINGS_MODULE=app.settings.pro && python ./app/manage.py migrate && python ./app/manage.py runserver 0.0.0.0:8000"]
+CMD ["sh","-c","export DJANGO_SETTINGS_MODULE=app.settings.pro && python ./app/manage.py migrate && python ./app/manage.py initadmin && python ./app/manage.py runserver 0.0.0.0:8000"]

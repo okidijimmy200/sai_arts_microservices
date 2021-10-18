@@ -27,5 +27,7 @@ class UserAdmin(BaseUserAdmin):
             'fields': ('email', 'password1', 'password2')
          }),
     )
+    def has_module_permission(self, request):
+        return True
 
 admin.site.register(models.User, UserAdmin)

@@ -34,4 +34,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
+
+    def has_module_perms(self, user):
+        return self.is_superuser
     

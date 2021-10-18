@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sai-arts-client-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sai-arts-client
+  template:
+    metadata:
+      labels:
+        app: sai-arts-client
+    spec:
+      containers:
+        - name: sai-arts-client
+          image: okidijimmyjones/sai-arts-client
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sai-arts-client-srv
+spec:
+  selector:
+    app: sai-arts-client
+  ports:
+    - name: sai-arts-client
+      protocol: TCP
+      port: 80
+      targetPort: 80
+      

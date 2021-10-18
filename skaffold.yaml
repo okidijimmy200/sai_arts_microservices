@@ -18,3 +18,12 @@ build:
         manual:
           - dest: .
             src: 'app/**/*.py'
+
+    - image: okidijimmyjones/sai-arts-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync: 
+        manual:
+          - dest: .
+            src: '**/*.js'
