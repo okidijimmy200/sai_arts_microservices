@@ -3,3 +3,4 @@ psycopg2
 Pillow
 pytz 
 django-probes
+django-cors-headers 

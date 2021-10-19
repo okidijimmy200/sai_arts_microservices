@@ -3,14 +3,16 @@ const path = require('path')
 module.exports = {
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'index.bundle.js'
+        filename: 'index.bundle.js',
+        publicPath: '/'
     },
     devServer: {
         port: 80,
         hot: true,
         allowedHosts: [
             'saiarts.dev'
-        ]
+        ],
+        historyApiFallback: true
     },
     module: {
         rules: [

@@ -11,15 +11,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@emotion/core": "^11.0.0",
     "@material-ui/core": "^4.12.3",
     "@mui/icons-material": "^5.0.4",
     "@mui/material": "^5.0.4",
     "@mui/styled-engine-sc": "^5.0.3",
+    "axios": "^0.23.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-material-ui-carousel": "^2.3.5",
+    "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
+    "redux": "^4.1.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
     "styled-components": "^5.3.1"
   },
   "devDependencies": {
