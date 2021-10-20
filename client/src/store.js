@@ -4,13 +4,17 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import {
     userLoginReducer
 } from './reducers/userReducer'
+import {
+    pictureCreateReducer
+} from './reducers/pictureReducer'
 
 
 const reducer = combineReducers({
-    userLogin: userLoginReducer
+    userLogin: userLoginReducer,
+    pictureCreate: pictureCreateReducer
 })
 
-const userInfoFromStorage = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo ')) : null
+const userInfoFromStorage = localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null
 
 const initialState = {
     userLogin: {userInfo: userInfoFromStorage}
